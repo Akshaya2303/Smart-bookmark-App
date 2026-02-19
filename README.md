@@ -4,9 +4,8 @@ A real-time bookmark manager built with Next.js, Supabase, and Google OAuth.
 
 ## 🔗 Live Demo
 
-Live URL: https://your-vercel-url.vercel.app
+Live URL: https://smart-bookmark-app-hazel-beta.vercel.app
 
-(Update this with your actual Vercel URL after deployment)
 
 ## ✨ Features
 
@@ -75,8 +74,9 @@ Key learning: Realtime must be explicitly enabled at the database level, not jus
 
 **Correct format:**
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+NEXT_PUBLIC_SUPABASE_URL= https://mzvzuuqekaekjzhdfgyp.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16dnp1dXFla2Fla2p6aGRmZ3lwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyNDE5ODAsImV4cCI6MjA4NjgxNzk4MH0.kY7gESZI-lnybCSWraOHjxrOJa6gHQmddyuyW7MyLKQ
+
 ```
 
 ### Problem 4: File Structure Confusion - Missing lib/supabase Files
@@ -143,18 +143,6 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 **Key learning**: Always fully stop the dev server before starting a new one.
 
-### Problem 8: Finding Supabase Credentials
-
-**Issue**: Couldn't locate the "anon public" key in Supabase dashboard.
-
-**Solution**:
-- Went to Project Settings (⚙️ gear icon at bottom left) - NOT "Integrations".
-- Clicked on "API" section.
-- Found two keys: `anon` (public - safe to use) and `service_role` (secret - never use in client).
-- Copied both Project URL and anon key for environment variables.
-
-**Key learning**: The API settings are in Project Settings, not in the Integrations menu.
-
 ## 🚀 Setup Instructions
 
 ### Prerequisites
@@ -179,11 +167,8 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
    npm install
 ```
 
-3. Create `.env.local` file in the root directory:
-```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
+3. Create `.env.local` file in the root directory
+
 
 4. Set up Supabase database:
    - Create a Supabase project
@@ -265,11 +250,7 @@ Deployed on Vercel with automatic deployments from the main branch.
 5. **OAuth callbacks** require proper route handlers in Next.js
 6. **Middleware** is essential for maintaining auth sessions across pages
 
-## 📝 License
 
-MIT
-
-## 👤 Author
 
 **Akshaya Nayakidi**
 - GitHub: [@Akshaya2303](https://github.com/Akshaya2303)
